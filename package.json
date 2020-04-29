@@ -1,0 +1,16 @@
+{
+  "name": "express-backend",
+  "version": "1.0.0",
+  "description": "基于 Express 的 Node.js 的后端开发",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "JavaScript"
+  ],
+  "author": "lili_sakura@126.com",
+  "license": "ISC"
+}
