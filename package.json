@@ -4,7 +4,7 @@
   "description": "基于 Express 的 Node.js 的后端开发",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development nodemon ./src/app.js --exec babel-node"
   },
   "keywords": [
     "Node.js",
@@ -12,5 +12,22 @@
     "JavaScript"
   ],
   "author": "lili_sakura@126.com",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.3"
+  }
 }
