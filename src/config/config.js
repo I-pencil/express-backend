@@ -16,7 +16,6 @@ module.exports = {
     host: env.MYSQL_HOST,
     port: env.MYSQL_PORT,
     dialect: 'mysql',
-    operatorsAliases: false,
   },
   production: {
     username: env.MYSQL_USER,
@@ -25,6 +24,5 @@ module.exports = {
     host: env.MYSQL_HOST,
     port: env.MYSQL_PORT,
     dialect: 'mysql',
-    operatorsAliases: false,
   },
 };

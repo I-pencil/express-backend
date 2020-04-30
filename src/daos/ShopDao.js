@@ -7,8 +7,8 @@ import {
 } from '../utils/sql';
 
 
-export default class ShopsDao extends BaseDao {
-  modelName = 'shops'
+export default class ShopDao extends BaseDao {
+  modelName = 'shop'
 
   // 分页查找店铺
   async findPage(params = {}) {
@@ -19,14 +19,11 @@ export default class ShopsDao extends BaseDao {
     return await this.findAndCountAll(sql)
   }
   async addItem(item) {
-    const findParams = getFindSql({ id: item.id })
-    const model = await this.findOne(findParams)
-    if (model[1]) {
-      const data = model[1] || {}
-      const { params, query } = getUpdateSql('id', { ...item, id: data.id })
-      return await this.update(params, query)
-    }
     return await this.insert(item)
+  }
+  async updateItem(item) {
+    const { params, query } = getUpdateSql('id', { ...item, id: item.id });
+    return await this.update(params, query);
   }
   async deleteItem(item) {
     const query = getFindSql(item)

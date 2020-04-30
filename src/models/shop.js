@@ -4,8 +4,8 @@
 import Sequelize from 'sequelize';
 
 export default function (sequelize, DataTypes) {
-  class Shops extends Sequelize.Model {}
-  Shops.init(
+  class Shop extends Sequelize.Model {}
+  Shop.init(
     {
       id: {
         type: DataTypes.INTEGER,
@@ -16,13 +16,21 @@ export default function (sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      thumb_url: DataTypes.STRING,
+      thumbUrl: {
+        type: DataTypes.STRING,
+        field: 'thumb_url',
+      },
+      createdDate: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        field: 'created_date',
+      },
     },
     {
       sequelize,
-      modelName: 'shops',
-      tableName: 't_shops',
+      modelName: 'shop',
+      tableName: 't_shop',
     }
   );
-  return Shops;
+  return Shop;
 }
