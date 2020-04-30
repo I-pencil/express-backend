@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "express-backend",
+      "script": "./dist/app.js",
+      "exp_backoff_restart_delay": 100,
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "output": "./log/out.log",
+      "error": "./log/error.log",
+      "instances": 1,
+      "watch": false,
+      "merge_logs": true,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
